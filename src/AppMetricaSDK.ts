@@ -3,7 +3,7 @@ import { UserProfile, UserProfileGender } from "./UserProfile";
 
 export { UserProfile, UserProfileGender } from "./UserProfile";
 
-export class AppMetrica {
+export class AppMetricaSDK {
 
     private static excludeReadOnlyProperties(options: Object): Object {
         const KEY = 0;
@@ -15,7 +15,7 @@ export class AppMetrica {
     public static init(options: Options): void {
         let configuration: YMMYandexMetricaConfiguration = YMMYandexMetricaConfiguration.alloc().initWithApiKey(options.apiKey);
 
-        Object.assign(configuration, AppMetrica.excludeReadOnlyProperties(options));
+        Object.assign(configuration, AppMetricaSDK.excludeReadOnlyProperties(options));
 
         YMMYandexMetrica.activateWithConfiguration(configuration);
     }
@@ -23,7 +23,7 @@ export class AppMetrica {
     public initReporter(options: ReporterOptions): void {
         let reporterConfiguration: YMMReporterConfiguration = YMMReporterConfiguration.alloc().initWithApiKey(options.apiKey);
 
-        Object.assign(reporterConfiguration, AppMetrica.excludeReadOnlyProperties(options));
+        Object.assign(reporterConfiguration, AppMetricaSDK.excludeReadOnlyProperties(options));
 
         YMMYandexMetrica.activateReporterWithConfiguration(reporterConfiguration);
     }
@@ -31,10 +31,10 @@ export class AppMetrica {
     public static initWithTrackingIdentifier(options: Options, trackingID: string): void {
 
         options.preloadInfo = YMMYandexMetricaPreloadInfo.alloc().initWithTrackingIdentifier(trackingID);
-        AppMetrica.init(options);
+        AppMetricaSDK.init(options);
     }
 
-    public static sendEvent(event: Event, onFailure?: (error: Error) => void): void {
+    public static trackEvent(event: Event, onFailure?: (error: Error) => void): void {
 
         if (event.params) {
             YMMYandexMetrica.reportEventParametersOnFailure(event.name, event.params, onFailure);
@@ -43,7 +43,7 @@ export class AppMetrica {
         }
     }
 
-    public static sendReporterEvent(apiKey: string, event: Event, onFailure?: (error: Error) => void): void {
+    public static trackReporterEvent(apiKey: string, event: Event, onFailure?: (error: Error) => void): void {
 
         let reporter: YMMYandexMetricaReporting = YMMYandexMetrica.reporterForApiKey(apiKey);
 
