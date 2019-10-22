@@ -24,7 +24,7 @@ export interface ReporterOptions {
 
 export interface Event {
     name: string;
-    params?: NSDictionary<any, any>;
+    params?: any;
 }
 
 export class AppMetricaSDK {
