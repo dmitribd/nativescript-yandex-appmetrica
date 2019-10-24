@@ -15,6 +15,10 @@ export class AppMetricaSDK {
     public static init(options: Options): void {
         let configuration: YMMYandexMetricaConfiguration = YMMYandexMetricaConfiguration.alloc().initWithApiKey(options.apiKey);
 
+        if (!configuration) {
+            throw new Error('The API key is wrong. Please provide a valid key.');
+        }
+
         Object.assign(configuration, AppMetricaSDK.excludeReadOnlyProperties(options));
 
         YMMYandexMetrica.activateWithConfiguration(configuration);
