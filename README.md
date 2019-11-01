@@ -48,20 +48,20 @@ initializes the SDK.
 
 ##### <a id="Options"> **`Options`**
 
-| name                                                                                                                                                                                              | type                        | description                                                                                                                |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|----------------------------------------------------------------------------------------------------------------------------|
-| [apiKey](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_apiKey)                                                 |`string`                     | The API key of the application.                                                                                            |
-| [appVersion](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_appVersion)                                         |`string`                     | App version (optional)                                                                                                     |
-| [crashReporting](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_crashReporting)                                 |`boolean`                    | Enables/disables collecting and sending information about app crashes. (optional)                                          |
-| [handleActivationAsSessionStart](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_handleActivationAsSessionStart) |`boolean`                    | Defines the AppMetrica SDK initialization as the beginning of a session. (optional)                                        |
-| [handleFirstActivationAsUpdate](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_handleFirstActivationAsUpdate)   |`boolean`                    | Defines the first launch of the app as an update. (optional)                                                               |
-| [location](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_location)                                             |`CLLocation`                 | Sets custom location of the device. (optional)                                                                             |
-| [locationTracking](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_locationTracking)                             |`boolean`                    | Enables/disables sending location of the device. (optional)                                                                |
-| [logs](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_logs)                                                     |`boolean`                    | Enables/disables logging the activity of the library. (optional)                                                           |
-| [preloadInfo](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_preloadInfo)                                       |`YMMYandexMetricaPreloadInfo`| Sets the instance of the YMMYandexMetricaPreloadInfo class for tracking pre-installed apps. (optional)                     |
-| [sessionsAutoTracking](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_sessionsAutoTracking)                     |`boolean`                    | Enables/disables automatic tracking of the application lifecycle. (optional)                                               |
-| [sessionTimeout](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_sessionTimeout)                                 |`number`                     | Sets the session timeout in seconds. (optional)                                                                            |
-| [statisticsSending](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_statisticsSending)                           |`boolean`                    | Enables/disables sending statistics to the AppMetrica server. (optional)                                                   |
+| name                                                                                                                                                                                              | type                         | description                                                                                            |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|--------------------------------------------------------------------------------------------------------|
+| [apiKey](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_apiKey)                                                 |`string`                      | The API key of the application.                                                                        |
+| [appVersion](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_appVersion)                                         |`string`                      | App version (optional)                                                                                 |
+| [crashReporting](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_crashReporting)                                 |`boolean`                     | Enables/disables collecting and sending information about app crashes. (optional)                      |
+| [handleActivationAsSessionStart](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_handleActivationAsSessionStart) |`boolean`                     | Defines the AppMetrica SDK initialization as the beginning of a session. (optional)                    |
+| [handleFirstActivationAsUpdate](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_handleFirstActivationAsUpdate)   |`boolean`                     | Defines the first launch of the app as an update. (optional)                                           |
+| [location](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_location)                                             |`CLLocation`                  | Sets custom location of the device. (optional)                                                         |
+| [locationTracking](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_locationTracking)                             |`boolean`                     | Enables/disables sending location of the device. (optional)                                            |
+| [logs](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_logs)                                                     |`boolean`                     | Enables/disables logging the activity of the library. (optional)                                       |
+| [preloadInfo](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_preloadInfo)                                       |`YMMYandexMetricaPreloadInfo` | Sets the instance of the YMMYandexMetricaPreloadInfo class for tracking pre-installed apps. (optional) |
+| [sessionsAutoTracking](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_sessionsAutoTracking)                     |`boolean`                     | Enables/disables automatic tracking of the application lifecycle. (optional)                           |
+| [sessionTimeout](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_sessionTimeout)                                 |`number`                      | Sets the session timeout in seconds. (optional)                                                        |
+| [statisticsSending](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/ios/objective-c/ref/YMMYandexMetricaConfiguration.html#property_detail__property_statisticsSending)                           |`boolean`                     | Enables/disables sending statistics to the AppMetrica server. (optional)                               |
 
 *Example:*
 
@@ -203,11 +203,11 @@ AppMetricaSDK.sendReporterEvent('Additional_API_key', event, function(error) {
 
 Sends the user profile attributes.
 
-| parameter               | type                    | description                                                                                                |
-|-------------------------|-------------------------|------------------------------------------------------------------------------------------------------------|
-| `profieID`              | string                  | ID of the user profile.                                                                                    |
-| `UserProfileAttribute` | UserProfileAttribute[] | A list of the user profile attributes.                                                                     |
-| `onFailure`             | `function`              | The function that is executed when an error occurs. The error is passed as a function argument. (optional) |
+| parameter               | type                   | description                                                                                                |
+|-------------------------|------------------------|------------------------------------------------------------------------------------------------------------|
+| `profieID`              | string                 | ID of the user profile.                                                                                    |
+| `userProfileAttributes` | UserProfileAttribute[] | A list of the user profile attributes.                                                                     |
+| `onFailure`             | `function`             | The function that is executed when an error occurs. The error is passed as a function argument. (optional) |
 
 *Example:*
 
@@ -234,10 +234,14 @@ AppMetricaSDK.sendUserProfile('profieID', userProfileAttributes, function(error)
 
 ## <a id="Demo">  Demo
 
-This plugin has a `demo` project bundled with it. To give it a try , clone this repo and from root a.e. `nativescript-yandex-appmetrica` execute the following:
+This plugin has a `demo` project bundled with it. To give it a try, clone this repo and from root `nativescript-yandex-appmetrica` execute the following:
 
 ```sh
 npm run plugin.prepare
 ```
 
- - Run `npm run demo.ios` will run for the ios platform.
+Run for the `iOS` platform:
+
+```sh
+npm run demo.ios
+```
