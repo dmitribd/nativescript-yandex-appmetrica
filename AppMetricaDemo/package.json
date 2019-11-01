@@ -14,7 +14,7 @@
   "repository": "<fill-your-repository-here>",
   "dependencies": {
     "nativescript-theme-core": "~1.0.6",
-    "nativescript-yandex-metrica": "file:../src",
+    "nativescript-yandex-appmetrica": "file:../src",
     "tns-core-modules": "~6.1.0"
   },
   "devDependencies": {

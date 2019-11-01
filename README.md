@@ -1,4 +1,4 @@
-# nativescript-yandex-metrica
+# nativescript-yandex-appmetrica
 
 NativeScript plugin for Yandex [AppMetrica SDK](https://appmetrica.yandex.ru/docs/mobile-sdk-dg/concepts/mobilesdk-about.html)
 
@@ -22,7 +22,7 @@ NativeScript plugin for Yandex [AppMetrica SDK](https://appmetrica.yandex.ru/doc
 
 ## <a id="installation"> Installation
 
-`$ tns plugin add nativescript-yandex-metrica`
+`$ tns plugin add nativescript-yandex-appmetrica`
 
 
 
@@ -31,7 +31,7 @@ NativeScript plugin for Yandex [AppMetrica SDK](https://appmetrica.yandex.ru/doc
 
 Call module by adding: 
 
-`import { AppMetricaSDK, UserProfileAttributes, UserProfileGender } from 'nativescript-yandex-metrica'`
+`import { AppMetricaSDK, UserProfileAttributes, UserProfileGender } from 'nativescript-yandex-appmetrica'`
 
 ---
 
@@ -234,7 +234,7 @@ AppMetricaSDK.sendUserProfile('profieID', userProfileAttributes, function(error)
 
 ## <a id="Demo">  Demo
 
-This plugin has a `demo` project bundled with it. To give it a try , clone this repo and from root a.e. `nativescript-yandex-metrica` execute the following:
+This plugin has a `demo` project bundled with it. To give it a try , clone this repo and from root a.e. `nativescript-yandex-appmetrica` execute the following:
 
 ```sh
 npm run plugin.prepare

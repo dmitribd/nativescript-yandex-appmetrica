@@ -1,5 +1,5 @@
 import { Observable } from "tns-core-modules/data/observable";
-import { UserProfileAttributes, AppMetricaSDK, UserProfileGender } from "nativescript-yandex-metrica";
+import { UserProfileAttributes, AppMetricaSDK, UserProfileGender } from "nativescript-yandex-appmetrica";
 
 export class HelloWorldModel extends Observable {
 
