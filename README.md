@@ -28,9 +28,8 @@ NativeScript plugin for Yandex [AppMetrica SDK](https://appmetrica.yandex.ru/doc
 
 ## <a id="api-methods">  API Methods
 
----
 
-Call module by adding (native javascript): 
+Call module by adding: 
 
 `import { AppMetricaSDK, UserProfileAttributes, UserProfileGender } from 'nativescript-yandex-metrica'`
 
@@ -77,7 +76,7 @@ AppMetricaSDK.init({
 
 ---
 
-#####<a id="initReporter"> **`AppMetricaSDK.initReporter(options: ReporterOptions): void`**
+##### <a id="initReporter"> **`AppMetricaSDK.initReporter(options: ReporterOptions): void`**
 
 Initializes a reporter with extended configuration.
 
@@ -113,7 +112,7 @@ AppMetricaSDK.initReporter({
 
 ---
 
-#####<a id="initWithTrackingIdentifier"> **`AppMetricaSDK.initWithTrackingIdentifier(options: Options, trackingID: string): void`**
+##### <a id="initWithTrackingIdentifier"> **`AppMetricaSDK.initWithTrackingIdentifier(options: Options, trackingID: string): void`**
 
 Initializes the SDK with the specified [trackingID]((https://appmetrica.yandex.ru/docs/mobile-tracking/concepts/preinstalled-app-attr.html#preinstalled-app-attr__trackingId)).
 
@@ -126,16 +125,16 @@ Initializes the SDK with the specified [trackingID]((https://appmetrica.yandex.r
 
 ```javascript
 AppMetricaSDK.initWithTrackingIdentifier({
-    apiKey: 'dsgfa44g-f3re-432f-ffd-fdst4tgfsf4',
+    apiKey: 'API_key',
     appVersion: '1.0.0',
     crashReporting: true,
     logs: true
-}, '12345')
+}, 'trackingID')
 ```
 
 ---
 
-#####<a id="sendEvent"> **`AppMetricaSDK.sendEvent(event: Event, onFailure?: (error: Error) => void): void`**
+##### <a id="sendEvent"> **`AppMetricaSDK.sendEvent(event: Event, onFailure?: (error: Error) => void): void`**
 
 Sends an event data.
 
@@ -146,7 +145,7 @@ Sends an event data.
 
 
 
-#####<a id="Event"> **`Event`**
+##### <a id="Event"> **`Event`**
 
 | name   | type     | description                                 |
 |--------|----------|---------------------------------------------|
@@ -166,13 +165,13 @@ let event: Event = {
 }
 
 AppMetricaSDK.sendEvent(event, function(error) {
-    console.log('Failed to track event [' + event.name + ']: ' + error)
+    console.log('Failed to send event [' + event.name + ']: ' + error)
 })
 ```
 
 ---
 
-#####<a id="sendReporterEvent"> **`AppMetricaSDK.sendReporterEvent(apiKey: string, event: Event, onFailure?: (error: Error) => void): void`**
+##### <a id="sendReporterEvent"> **`AppMetricaSDK.sendReporterEvent(apiKey: string, event: Event, onFailure?: (error: Error) => void): void`**
 
 Sends an event data using a reporter to an additional API key.
 
@@ -194,13 +193,13 @@ let event: Event = {
 }
 
 AppMetricaSDK.sendReporterEvent('Additional_API_key', event, function(error) {
-    console.log('Failed to track event [' + event.name + ']: ' + error)
+    console.log('Failed to send event [' + event.name + ']: ' + error)
 })
 ```
 
 ---
 
-#####<a id="sendUserProfile"> **`AppMetricaSDK.sendUserProfile(profieID: string, userProfileAttributes: UserProfileAttributes[], onFailure?: (error: Error) => void): void`**
+##### <a id="sendUserProfile"> **`AppMetricaSDK.sendUserProfile(profieID: string, userProfileAttributes: UserProfileAttributes[], onFailure?: (error: Error) => void): void`**
 
 Sends the user profile attributes.
 
@@ -225,7 +224,7 @@ let userProfileAttributes: UserProfileAttributes[] = [
     UserProfileAttributes.customBool().setValue({name: 'has_premium', value: true}),
 ]
 
-AppMetricaSDK.sendUserProfile('123456', userProfileAttributes, function(error) {
+AppMetricaSDK.sendUserProfile('profieID', userProfileAttributes, function(error) {
     console.log('Failed to send AppMetrica user profile: ' + error)
 })
 ```
@@ -233,7 +232,7 @@ AppMetricaSDK.sendUserProfile('123456', userProfileAttributes, function(error) {
 ---
 
 
-##<a id="Demo">  Demo
+## <a id="Demo">  Demo
 
 This plugin has a `demo` project bundled with it. To give it a try , clone this repo and from root a.e. `nativescript-yandex-metrica` execute the following:
 
