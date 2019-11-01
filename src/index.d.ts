@@ -1,4 +1,4 @@
-export { UserProfileAttributes, UserProfileGender } from "./UserProfileAttributes";
+export { UserProfileAttribute, UserProfileGender } from "./UserProfileAttribute";
 
 export interface Options {
     apiKey: string;
@@ -33,5 +33,5 @@ export class AppMetricaSDK {
     public static initWithTrackingIdentifier(options: Options, trackingID: string): void;
     public static sendEvent(event: Event, onFailure?: (error: Error) => void): void;
     public static sendReporterEvent(apiKey: string, event: Event, onFailure?: (error: Error) => void): void;
-    public static sendUserProfile(profieID: string, userProfileAttributes: UserProfileAttributes[], onFailure?: (error: Error) => void): void;
+    public static sendUserProfile(profieID: string, userProfileAttributes: UserProfileAttribute[], onFailure?: (error: Error) => void): void;
 }

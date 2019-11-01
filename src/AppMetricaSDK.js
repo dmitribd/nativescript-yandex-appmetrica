@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var UserProfileAttributes_1 = require("./UserProfileAttributes");
-exports.UserProfileAttributes = UserProfileAttributes_1.UserProfileAttributes;
-exports.UserProfileGender = UserProfileAttributes_1.UserProfileGender;
+var UserProfileAttribute_1 = require("./UserProfileAttribute");
+exports.UserProfileAttribute = UserProfileAttribute_1.UserProfileAttribute;
+exports.UserProfileGender = UserProfileAttribute_1.UserProfileGender;
 var AppMetricaSDK = (function () {
     function AppMetricaSDK() {
     }

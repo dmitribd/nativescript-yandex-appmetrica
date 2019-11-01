@@ -31,7 +31,7 @@ NativeScript plugin for Yandex [AppMetrica SDK](https://appmetrica.yandex.ru/doc
 
 Call module by adding: 
 
-`import { AppMetricaSDK, UserProfileAttributes, UserProfileGender } from 'nativescript-yandex-appmetrica'`
+`import { AppMetricaSDK, UserProfileAttribute, UserProfileGender } from 'nativescript-yandex-appmetrica'`
 
 ---
 
@@ -199,29 +199,29 @@ AppMetricaSDK.sendReporterEvent('Additional_API_key', event, function(error) {
 
 ---
 
-##### <a id="sendUserProfile"> **`AppMetricaSDK.sendUserProfile(profieID: string, userProfileAttributes: UserProfileAttributes[], onFailure?: (error: Error) => void): void`**
+##### <a id="sendUserProfile"> **`AppMetricaSDK.sendUserProfile(profieID: string, userProfileAttributes: UserProfileAttribute[], onFailure?: (error: Error) => void): void`**
 
 Sends the user profile attributes.
 
 | parameter               | type                    | description                                                                                                |
 |-------------------------|-------------------------|------------------------------------------------------------------------------------------------------------|
 | `profieID`              | string                  | ID of the user profile.                                                                                    |
-| `userProfileAttributes` | UserProfileAttributes[] | A list of the user profile attributes.                                                                     |
+| `UserProfileAttribute` | UserProfileAttribute[] | A list of the user profile attributes.                                                                     |
 | `onFailure`             | `function`              | The function that is executed when an error occurs. The error is passed as a function argument. (optional) |
 
 *Example:*
 
 ```javascript
-let userProfileAttributes: UserProfileAttributes[] = [
-    UserProfileAttributes.customCounter().setValue({name: 'time_left', value: -4.42}),
-    UserProfileAttributes.gender().setValue(UserProfileGender.Male),
-    UserProfileAttributes.birthDate().setValue(24),
-    UserProfileAttributes.notificationsEnabled().setValue(false),
-    UserProfileAttributes.customString().setValue({name: 'born_in', default: 'Moscow'}),
-    UserProfileAttributes.customString().setValue({name: 'address', value: ''}),
-    UserProfileAttributes.customString().setValue({name: 'age', value: '24'}),
-    UserProfileAttributes.customCounter().setValue({name: 'logins_count', value: 1}),
-    UserProfileAttributes.customBool().setValue({name: 'has_premium', value: true}),
+let userProfileAttributes: UserProfileAttribute[] = [
+   UserProfileAttribute.customCounter({name: 'time_left', value: -4.42}),
+   UserProfileAttribute.gender(UserProfileGender.Male),
+   UserProfileAttribute.birthDate(24),
+   UserProfileAttribute.notificationsEnabled(false),
+   UserProfileAttribute.customString({name: 'born_in', default: 'Moscow'}),
+   UserProfileAttribute.customString({name: 'address', value: ''}),
+   UserProfileAttribute.customString({name: 'age', value: '24'}),
+   UserProfileAttribute.customCounter({name: 'logins_count', value: 1}),
+   UserProfileAttribute.customBool({name: 'has_premium', value: true})
 ]
 
 AppMetricaSDK.sendUserProfile('profieID', userProfileAttributes, function(error) {

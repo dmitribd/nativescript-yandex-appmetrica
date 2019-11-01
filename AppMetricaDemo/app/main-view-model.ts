@@ -1,5 +1,5 @@
 import { Observable } from "tns-core-modules/data/observable";
-import { UserProfileAttributes, AppMetricaSDK, UserProfileGender } from "nativescript-yandex-appmetrica";
+import { UserProfileAttribute, AppMetricaSDK, UserProfileGender } from "nativescript-yandex-appmetrica";
 
 export class HelloWorldModel extends Observable {
 
@@ -38,15 +38,15 @@ export class HelloWorldModel extends Observable {
         });
 
         AppMetricaSDK.sendUserProfile('123456', [
-            UserProfileAttributes.customCounter().setValue({name: 'time_left', value: -4.42}),
-            UserProfileAttributes.gender().setValue(UserProfileGender.Male),
-            UserProfileAttributes.birthDate().setValue(24),
-            UserProfileAttributes.notificationsEnabled().setValue(false),
-            UserProfileAttributes.customString().setValue({name: 'born_in', default: 'Moscow'}),
-            UserProfileAttributes.customString().setValue({name: 'address', value: ''}),
-            UserProfileAttributes.customString().setValue({name: 'age', value: '24'}),
-            UserProfileAttributes.customCounter().setValue({name: 'logins_count', value: 1}),
-            UserProfileAttributes.customBool().setValue({name: 'has_premium', value: true}),
+            UserProfileAttribute.customCounter({name: 'time_left', value: -4.42}),
+            UserProfileAttribute.gender(UserProfileGender.Male),
+            UserProfileAttribute.birthDate(24),
+            UserProfileAttribute.notificationsEnabled(false),
+            UserProfileAttribute.customString({name: 'born_in', default: 'Moscow'}),
+            UserProfileAttribute.customString({name: 'address', value: ''}),
+            UserProfileAttribute.customString({name: 'age', value: '24'}),
+            UserProfileAttribute.customCounter({name: 'logins_count', value: 1}),
+            UserProfileAttribute.customBool({name: 'has_premium', value: true})
         ]);
     }
 

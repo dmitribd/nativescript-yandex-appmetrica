@@ -1,7 +1,7 @@
 import { Event, Options, ReporterOptions } from "./index";
-import { UserProfileAttributes, UserProfileGender } from "./UserProfileAttributes";
+import { UserProfileAttribute, UserProfileGender } from "./UserProfileAttribute";
 
-export { UserProfileAttributes, UserProfileGender } from "./UserProfileAttributes";
+export { UserProfileAttribute, UserProfileGender } from "./UserProfileAttribute";
 
 export class AppMetricaSDK {
 
@@ -62,7 +62,7 @@ export class AppMetricaSDK {
         reporter.pauseSession();
     }
 
-    public static sendUserProfile(profieID: string, userProfileAttributes: UserProfileAttributes[], onFailure?: (error: Error) => void): void {
+    public static sendUserProfile(profieID: string, userProfileAttributes: UserProfileAttribute[], onFailure?: (error: Error) => void): void {
         let profile: YMMMutableUserProfile = YMMMutableUserProfile.alloc().init();
 
         profile.applyFromArray(userProfileAttributes);
