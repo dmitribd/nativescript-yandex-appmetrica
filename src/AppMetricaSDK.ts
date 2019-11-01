@@ -1,7 +1,7 @@
 import { Event, Options, ReporterOptions } from "./index";
-import { UserProfile, UserProfileGender } from "./UserProfile";
+import { UserProfileAttributes, UserProfileGender } from "./UserProfileAttributes";
 
-export { UserProfile, UserProfileGender } from "./UserProfile";
+export { UserProfileAttributes, UserProfileGender } from "./UserProfileAttributes";
 
 export class AppMetricaSDK {
 
@@ -38,7 +38,7 @@ export class AppMetricaSDK {
         AppMetricaSDK.init(options);
     }
 
-    public static trackEvent(event: Event, onFailure?: (error: Error) => void): void {
+    public static sendEvent(event: Event, onFailure?: (error: Error) => void): void {
 
         if (event.params) {
             YMMYandexMetrica.reportEventParametersOnFailure(event.name, event.params, onFailure);
@@ -47,7 +47,7 @@ export class AppMetricaSDK {
         }
     }
 
-    public static trackReporterEvent(apiKey: string, event: Event, onFailure?: (error: Error) => void): void {
+    public static sendReporterEvent(apiKey: string, event: Event, onFailure?: (error: Error) => void): void {
 
         let reporter: YMMYandexMetricaReporting = YMMYandexMetrica.reporterForApiKey(apiKey);
 
@@ -62,10 +62,10 @@ export class AppMetricaSDK {
         reporter.pauseSession();
     }
 
-    public static setUserProfile(profieID: string, updatesArray: UserProfile[], onFailure?: (error: Error) => void): void {
+    public static sendUserProfile(profieID: string, userProfileAttributes: UserProfileAttributes[], onFailure?: (error: Error) => void): void {
         let profile: YMMMutableUserProfile = YMMMutableUserProfile.alloc().init();
 
-        profile.applyFromArray(updatesArray);
+        profile.applyFromArray(userProfileAttributes);
         YMMYandexMetrica.setUserProfileID(profieID);
 
         YMMYandexMetrica.reportUserProfileOnFailure(profile, onFailure);

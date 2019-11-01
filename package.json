@@ -1,0 +1,15 @@
+{
+	"scripts": {
+		"tsc": "cd src && npm i && tsc",
+		"build": "cd src && npm run tsc && npm run build.native",
+		"build.native": "cd src && node scripts/build-native.js",
+		"tslint": "tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
+		"ci.tslint": "cd src && npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**' --exclude '**/platforms/**'",
+		"prepack": "cd src && npm run build.native",
+		"demo.ios": "cd src && npm run tsc && cd ../AppMetricaDemo && tns run ios",
+		"demo.android": "cd src && npm run tsc && cd ../AppMetricaDemo && tns run android",
+		"demo.reset": "cd AppMetricaDemo && npx rimraf -- hooks node_modules platforms package-lock.json",
+		"plugin.prepare": "cd src && npm run build && cd ../AppMetricaDemo && tns plugin remove nativescript-yandex-metrica && tns plugin add ../src",
+		"clean": "cd src && npm run demo.reset && npx rimraf -- node_modules package-lock.json && npm i"
+	}
+}
