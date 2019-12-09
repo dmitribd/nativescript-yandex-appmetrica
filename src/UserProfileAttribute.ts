@@ -27,15 +27,12 @@ export enum UserProfileGender {
 }
 
 export class UserProfileAttribute {
-    static customName(value: string): any {
-        return YMMProfileAttribute.name().withValue(value);
-    }
 
     static gender(value: UserProfileGender | YMMGenderType): any {
         return YMMProfileAttribute.gender().withValue((value as YMMGenderType));
     }
 
-    static birthDate(value: number): any {
+    static birthDateWithAge(value: number): any {
         return YMMProfileAttribute.birthDate().withAge(value);
     }
 

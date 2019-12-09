@@ -213,15 +213,14 @@ Sends the user profile attributes.
 
 ```javascript
 let userProfileAttributes: UserProfileAttribute[] = [
-   UserProfileAttribute.customCounter({name: 'time_left', value: -4.42}),
-   UserProfileAttribute.gender(UserProfileGender.Male),
-   UserProfileAttribute.birthDate(24),
-   UserProfileAttribute.notificationsEnabled(false),
-   UserProfileAttribute.customString({name: 'born_in', default: 'Moscow'}),
-   UserProfileAttribute.customString({name: 'address', value: ''}),
-   UserProfileAttribute.customString({name: 'age', value: '24'}),
-   UserProfileAttribute.customCounter({name: 'logins_count', value: 1}),
-   UserProfileAttribute.customBool({name: 'has_premium', value: true})
+    UserProfileAttribute.gender(UserProfileGender.Male),
+    UserProfileAttribute.birthDateWithAge(24),
+    UserProfileAttribute.notificationsEnabled(false),
+    UserProfileAttribute.customBool({name: 'has_premium', value: true}),
+    UserProfileAttribute.customCounter({name: 'logins_count', value: 1}),
+    UserProfileAttribute.customNumber({name: 'age', value: 24}),
+    UserProfileAttribute.customString({name: 'born_in', default: 'Moscow'}),
+    UserProfileAttribute.customString({name: 'address', value: ''})
 ]
 
 AppMetricaSDK.sendUserProfile('profieID', userProfileAttributes, function(error) {

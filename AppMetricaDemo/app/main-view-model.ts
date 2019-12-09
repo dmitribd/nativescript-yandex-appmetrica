@@ -40,7 +40,7 @@ export class HelloWorldModel extends Observable {
         AppMetricaSDK.sendUserProfile('123456', [
             UserProfileAttribute.customCounter({name: 'time_left', value: -4.42}),
             UserProfileAttribute.gender(UserProfileGender.Male),
-            UserProfileAttribute.birthDate(24),
+            UserProfileAttribute.birthDateWithAge(24),
             UserProfileAttribute.notificationsEnabled(false),
             UserProfileAttribute.customString({name: 'born_in', default: 'Moscow'}),
             UserProfileAttribute.customString({name: 'address', value: ''}),

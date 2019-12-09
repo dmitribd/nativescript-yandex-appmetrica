@@ -9,13 +9,10 @@ var UserProfileGender;
 var UserProfileAttribute = (function () {
     function UserProfileAttribute() {
     }
-    UserProfileAttribute.customName = function (value) {
-        return YMMProfileAttribute.name().withValue(value);
-    };
     UserProfileAttribute.gender = function (value) {
         return YMMProfileAttribute.gender().withValue(value);
     };
-    UserProfileAttribute.birthDate = function (value) {
+    UserProfileAttribute.birthDateWithAge = function (value) {
         return YMMProfileAttribute.birthDate().withAge(value);
     };
     UserProfileAttribute.notificationsEnabled = function (value) {

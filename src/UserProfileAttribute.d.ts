@@ -21,9 +21,8 @@ export declare enum UserProfileGender {
     Other = 2
 }
 export declare class UserProfileAttribute {
-    static customName(value: string): any;
     static gender(value: UserProfileGender | YMMGenderType): any;
-    static birthDate(value: number): any;
+    static birthDateWithAge(value: number): any;
     static notificationsEnabled(value: boolean): any;
     static customBool(property: PropertyBoolean): any;
     static customCounter(property: PropertyNumber): any;
