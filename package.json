@@ -9,7 +9,7 @@
 		"demo.ios": "cd src && npm run tsc && cd ../AppMetricaDemo && tns run ios",
 		"demo.android": "cd src && npm run tsc && cd ../AppMetricaDemo && tns run android",
 		"demo.reset": "cd AppMetricaDemo && npx rimraf -- hooks node_modules platforms package-lock.json",
-		"plugin.prepare": "cd src && npm run build && cd ../AppMetricaDemo && tns plugin remove nativescript-yandex-appmetrica && tns plugin add ../src",
+		"plugin.prepare": "npm run clean && pod repo update && cd src && npm run build && cd ../AppMetricaDemo && tns plugin remove nativescript-yandex-appmetrica && tns plugin add ../src",
 		"clean": "cd src && npm run demo.reset && npx rimraf -- node_modules package-lock.json && npm i"
 	}
 }
